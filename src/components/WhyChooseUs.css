@@ -1,0 +1,91 @@
+.why-choose-us {
+  padding: 12rem 0; /* Increased padding for luxury feel */
+  background-color: #0d0d0d; /* Matching the footer's deeper black */
+  color: #fff;
+}
+
+.why-header {
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
+.why-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.why-card {
+  text-align: left;
+  border-left: 1px solid rgba(255, 255, 255, 0.08); /* Sophisticated border */
+  padding: 1rem 0 1rem 2.5rem;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+}
+
+.why-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.why-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5); /* Improved readability */
+}
+
+.why-card:hover {
+  border-left-color: #fff;
+  transform: translateX(10px);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+}
+
+@media (max-width: 1200px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 0 2rem;
+  }
+  
+  .why-title {
+    font-size: 3rem;
+  }
+  
+  .why-card {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-title {
+    font-size: 2.5rem;
+  }
+  
+  .why-header {
+    margin-bottom: 6rem;
+  }
+}

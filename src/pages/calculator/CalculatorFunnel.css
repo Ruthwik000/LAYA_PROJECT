@@ -1,0 +1,729 @@
+/* Main Framework for the 3-Stage Price Calculator Funnel */
+
+.calc-funnel-page {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Section Framework */
+.cf-section {
+    padding: 8rem 0;
+    width: 100%;
+}
+
+.cf-section.dark-bg {
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+.cf-section.light-bg {
+    background-color: #F8F7F4;
+    color: #22211F;
+}
+
+.cf-section-title {
+    font-size: 3.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    margin-bottom: 3.5rem;
+    line-height: 1.1;
+}
+
+.cf-section-title.dark-text {
+    color: #22211F;
+}
+
+.cf-section-title.center {
+    text-align: center;
+}
+
+/* -------------------
+   PAGE 1: HERO SECTION 
+--------------------*/
+.cf-hero-wrapper {
+    padding-top: 220px; 
+    padding-bottom: 12rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.cf-hero-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Significantly lighter for better image visibility */
+    z-index: 1;
+}
+
+.cf-hero-wrapper .container {
+    position: relative;
+    z-index: 2;
+}
+
+.cf-hero {
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cf-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 3.5rem;
+    letter-spacing: -2px;
+}
+
+.cf-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 5rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.cf-hero-cta {
+    margin-top: 3.5rem;
+}
+
+.cf-btn-primary {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: #fff;
+    color: #0d0d0d;
+    border: 1px solid #fff;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+.cf-btn-primary:hover {
+    background-color: transparent;
+    color: #fff;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Intro Text (Light) */
+.cf-intro-text {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cf-short-intro-desc {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Steps (Dark) */
+/* Process Section (Light Split View) */
+.cf-process-section {
+    padding: 10rem 0;
+}
+
+.cf-process-container {
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    gap: 10rem;
+    align-items: flex-start;
+}
+
+.cf-process-header {
+    position: sticky;
+    top: 150px;
+}
+
+.cf-process-slashes {
+    display: inline-block;
+    width: 120px;
+    height: 14px;
+    margin-bottom: 2.5rem;
+    background-image: repeating-linear-gradient(-45deg, 
+        #e0e0e0, 
+        #e0e0e0 1px, 
+        transparent 1px, 
+        transparent 6px
+    );
+    opacity: 1; /* Gradient handles the color/softness directly */
+}
+
+.cf-process-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 3rem;
+    color: #0d0d0d;
+}
+
+.cf-process-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 350px;
+}
+
+.cf-process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+}
+
+.cf-process-card {
+    position: relative;
+    padding-top: 4rem;
+    transition: all 0.5s ease;
+}
+
+.cf-process-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14rem;
+    font-weight: 300;
+    line-height: 0.8;
+    color: #efefef;
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    z-index: 1;
+    opacity: 0.8;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.cf-process-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cf-process-step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #0d0d0d;
+    letter-spacing: -1px;
+}
+
+.cf-process-step-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    max-width: 250px;
+}
+
+.cf-process-card:hover {
+    transform: translateY(-10px);
+}
+
+.cf-process-card:hover .cf-process-number {
+    color: #e5e5e5;
+    transform: translateY(-5px);
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Estimates Carousel (Light) */
+.cf-carousel-container {
+    position: relative;
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+.cf-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.cf-segments-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 3rem;
+    padding: 2rem 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none;
+}
+
+.cf-segments-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.cf-segment-card {
+    flex: 0 0 400px;
+    background: #fff;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: center;
+}
+
+.cf-segment-image {
+    aspect-ratio: 16 / 10; /* Wider, less tall aspect as requested */
+    overflow: hidden;
+    margin-bottom: 0;
+    background-color: #f0f0f0;
+}
+
+.cf-segment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.cf-segment-card:hover .cf-segment-image img {
+    transform: scale(1.1);
+}
+
+.cf-segment-content {
+    padding: 2.2rem 1.8rem; /* Reduced padding for smaller card */
+    background: #fff;
+}
+
+.cf-segment-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #22211F;
+    font-weight: 300;
+}
+
+.cf-segment-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Carousel Control */
+.cf-carousel-arrow {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 70px;
+    background: #0d0d0d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cf-carousel-arrow:hover {
+    background: #22211F;
+    transform: translateY(-50%) translateX(10px);
+}
+
+.cf-carousel-arrow svg {
+    width: 35px;
+    height: 35px;
+}
+
+/* FAQ Grid (Dark) */
+.cf-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cf-faq-card {
+    text-align: left;
+    border-left: 1px solid rgba(255, 255, 255, 0.08); 
+    padding: 1.5rem 0 1.5rem 3rem;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cf-faq-card:hover {
+    border-left-color: #fff;
+    transform: translateX(10px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+}
+
+.cf-faq-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.cf-faq-card p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+/* -------------------
+   PAGE 2: FORM STEPPER PAGE 
+--------------------*/
+.cf-form-container {
+    max-width: 750px;
+    margin: 8rem auto;
+    background: #0d0d0d;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+.cf-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cf-progress-fill {
+    height: 100%;
+    background: #fff;
+    transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cf-back-control {
+    padding: 1.5rem 2.5rem;
+    height: 60px;
+}
+
+.cf-btn-back {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cf-btn-back:hover {
+    color: #fff;
+}
+
+.cf-step-wrapper {
+    padding: 2rem 5rem 6rem;
+}
+
+.cf-step-question {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+}
+
+.cf-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.cf-option-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cf-option-btn:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+.cf-option-btn.selected {
+    border-color: #fff;
+    background: #fff;
+    color: #0d0d0d;
+}
+
+.opt-price-tag {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.cf-option-btn.selected .opt-price-tag {
+    opacity: 1;
+}
+
+.cf-step-actions {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Lead Capture Form */
+.cf-lead-desc {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 3.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.cf-lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.input-group input {
+    padding: 1.2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cf-btn-submit {
+    margin-top: 2rem;
+    background-color: #fff;
+    color: #0d0d0d;
+    padding: 1.4rem;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+}
+
+.cf-btn-submit:hover {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: inset 0 0 0 1px #fff;
+}
+
+/* -------------------
+   PAGE 3: RESULT PAGE 
+--------------------*/
+.cf-result-card {
+    max-width: 700px;
+    margin: 8rem auto;
+    background: #0d0d0d;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0;
+    padding: 5rem;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.cf-result-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+.greet-name {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.8rem;
+}
+
+.cf-price-reveal {
+    background: transparent;
+    border-radius: 0;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cf-price-reveal .cf-amount {
+    font-size: 5rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: #fff;
+    font-weight: 300;
+}
+
+.cf-summary-box {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 3rem;
+    margin-bottom: 4rem;
+}
+
+.cf-summary-box h3 {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 1rem;
+}
+
+.cf-summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.cf-sum-key {
+    color: rgba(255,255,255,0.4);
+}
+
+.cf-sum-val {
+    color: #fff;
+    font-weight: 500;
+}
+
+.cf-btn-whatsapp {
+    background-color: #25D366;
+    color: #fff;
+    padding: 1.4rem;
+    border-radius: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.4s ease;
+}
+
+.cf-btn-whatsapp:hover {
+    background-color: #1EBE5D;
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes animateIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+    animation: animateIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.cf-social-inspiration {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.cf-social-inspiration p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5rem;
+}
+
+.cf-instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+}
+
+.cf-instagram-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);
+}
+
+@media (max-width: 1024px) {
+    .cf-process-container {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+    
+    .cf-process-header {
+        position: static;
+        text-align: center;
+    }
+    
+    .cf-process-intro {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cf-title { font-size: 3.5rem; }
+    .cf-process-grid { grid-template-columns: 1fr; gap: 4rem; }
+    .cf-step-wrapper, .cf-result-card { padding: 3rem 2rem; }
+    .cf-options-grid { grid-template-columns: 1fr; }
+    .cf-price-reveal .cf-amount { font-size: 3.5rem; }
+}

@@ -1,0 +1,366 @@
+.footer {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 0 0 120px 0; /* Extra bottom padding for floating widgets */
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  margin-top: 8rem; /* Prevent overlap and provide breathing room */
+}
+
+/* CTA Strip */
+.footer-cta-strip {
+  background-color: #151515;
+  padding: 6rem 0; /* Increased padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  min-height: 100px; /* Ensure consistent height */
+}
+
+.cta-content h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+  line-height: 1.1;
+  max-width: 600px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cta-btn {
+  padding: 1.3rem 3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.cta-btn.primary {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.primary:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cta-btn.secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-5px);
+}
+
+/* Main Footer */
+.footer-main {
+  padding: 10rem 0 8rem;
+}
+
+.footer-brand {
+  margin-bottom: 8rem;
+  max-width: 600px;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: 5px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  letter-spacing: 1.5px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 3.5rem;
+  font-weight: 300;
+}
+
+.footer-social {
+  display: flex;
+  gap: 3rem;
+}
+
+.social-icon {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  position: relative;
+}
+
+.social-icon::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.social-icon:hover {
+  opacity: 1;
+}
+
+.social-icon:hover::after {
+  width: 100%;
+}
+
+/* Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4rem 2rem;
+}
+
+.footer-col h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  color: #fff;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 1.5rem;
+}
+
+.footer-col a,
+.link-btn {
+  color: rgba(255, 255, 255, 0.6); /* Increased visibility */
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 300;
+}
+
+.footer-col a:hover,
+.link-btn:hover {
+  color: #fff;
+  transform: translateX(10px);
+}
+
+.city-group {
+  margin-bottom: 3rem;
+}
+
+.city-group h5 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5); /* Slightly brighter for consistency */
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.contact-info p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.contact-info strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.contact-info a {
+  color: inherit;
+  transform: none !important;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding: 5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 4rem;
+}
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #fff;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+  }
+  
+  .cta-content h3 {
+    font-size: 2.4rem;
+    max-width: 100%;
+  }
+
+  .footer-main {
+    padding: 8rem 0;
+  }
+  
+  .footer-brand {
+    margin-bottom: 6rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* Allow full width on mobile for centering */
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    font-size: 2.2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-btn {
+    text-align: center;
+    width: 100%;
+    padding: 1.3rem;
+  }
+  
+  .footer-col a:hover,
+  .link-btn:hover {
+    transform: none;
+  }
+  
+  .footer-logo {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+  }
+}
+
+
+
+

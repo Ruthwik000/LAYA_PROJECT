@@ -7,7 +7,7 @@
 
 .services-left {
   flex: 1;
-  padding: 6rem 4rem 6rem calc(4rem + (100vw - 1600px)/2);
+  padding: 6rem 4rem 6rem calc(10% + 44px);
   display: flex;
   flex-direction: column;
   justify-content: center;

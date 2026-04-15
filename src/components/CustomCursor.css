@@ -1,0 +1,75 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100000;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
+.custom-cursor.enlarged {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.cursor-label {
+  color: black;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor.enlarged .cursor-label {
+  opacity: 1;
+}
+
+.custom-cursor.on-modal {
+  background-color: black;
+  mix-blend-mode: normal;
+}
+
+.custom-cursor.on-modal.hovered {
+  background-color: white;
+  mix-blend-mode: difference;
+  border: none;
+}
+
+/* Ensure the label is visible if it pops up on modal (though unlikely for text labels here) */
+.custom-cursor.on-modal .cursor-label {
+  color: white;
+}
+
+/* Hide cursor on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+/* Ensure default cursor is hidden everywhere */
+html, body, a, button, [role="button"] {
+  cursor: none !important;
+}
