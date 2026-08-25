@@ -50,12 +50,12 @@ const Expertise = () => {
     return (
         <section className="expertise" id="expertise">
             <div className="container">
-                <div className="expertise-header">
+                <div className="expertise-header reveal-on-scroll">
                     <h2 className="expertise-title">Our Expertise</h2>
                 </div>
                 <div className="expertise-grid">
                     {expertiseItems.map((item, index) => (
-                        <div key={index} className="expertise-card">
+                        <div key={index} className={`expertise-card reveal-on-scroll delay-${(index % 4) * 100 + 100}`}>
                             <div className="expertise-icon">{item.icon}</div>
                             <h3 className="expertise-card-title">{item.title}</h3>
                             <p className="expertise-card-desc">{item.desc}</p>

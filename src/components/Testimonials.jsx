@@ -23,10 +23,10 @@ const Testimonials = () => {
     return (
         <section className="testimonials" id="testimonials">
             <div className="container">
-                <h2 className="testimonials-title">What Our Clients Say</h2>
+                <h2 className="testimonials-title reveal-on-scroll">What Our Clients Say</h2>
                 
                 {/* Featured Video Testimonial */}
-                <div className="featured-video-container">
+                <div className="featured-video-container reveal-on-scroll delay-100">
                     <div className="video-wrapper">
                         <video 
                             controls 
@@ -48,7 +48,7 @@ const Testimonials = () => {
 
                 <div className="testimonials-grid">
                     {reviews.map((review, index) => (
-                        <div key={index} className="testimonial-card">
+                        <div key={index} className={`testimonial-card reveal-on-scroll delay-${(index % 3) * 100 + 100}`}>
                             <p className="testimonial-text">“{review.text}”</p>
                             <div className="testimonial-author">
                                 <span className="author-name">{review.author}</span>

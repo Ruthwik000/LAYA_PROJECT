@@ -13,13 +13,13 @@ const ModularJourney = () => {
     return (
         <section className="modular-journey" id="modular-journey">
             <div className="container">
-                <div className="journey-header">
+                <div className="journey-header reveal-on-scroll">
                     <h2 className="journey-title">Your Modular Interior Journey</h2>
                     <p className="journey-subtitle">A seamless journey from concept to completion with precision at every step.</p>
                 </div>
                 <div className="journey-timeline">
                     {journeySteps.map((step, index) => (
-                        <div key={index} className="journey-step">
+                        <div key={index} className={`journey-step reveal-on-scroll delay-${(index % 5) * 100 + 100}`}>
                             <div className="journey-node">
                                 <span className="node-number">{step.icon}</span>
                             </div>

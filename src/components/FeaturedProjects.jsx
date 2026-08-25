@@ -10,14 +10,14 @@ const FeaturedProjects = () => {
     return (
         <section className="featured-projects" id="projects">
             <div className="container">
-                <div className="projects-header">
+                <div className="projects-header reveal-on-scroll">
                     <h2 className="projects-title">Our Recent Projects</h2>
                     <p className="projects-subtitle">A glimpse into our premium aluminium interior transformations.</p>
                 </div>
 
                 <div className="projects-grid">
-                    {featuredProjects.map((project) => (
-                        <Link to={`/projects/${project.id}`} key={project.id} className="project-card" data-cursor-text="VIEW PROJECT">
+                    {featuredProjects.map((project, index) => (
+                        <Link to={`/projects/${project.id}`} key={project.id} className={`project-card reveal-on-scroll delay-${(index % 3) * 100 + 100}`} data-cursor-text="VIEW PROJECT">
                             <div className="project-image">
                                 <img src={project.image} alt={project.title} />
                             </div>
