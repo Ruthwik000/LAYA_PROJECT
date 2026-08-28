@@ -20,6 +20,19 @@ const Testimonials = () => {
         }
     ];
 
+    const additionalVideos = [
+        {
+            src: "/videos/client_testimontial2.MP4",
+            title: "Crafting Dream Spaces",
+            desc: "\"From concept to completion, Laya Space Design delivered excellence at every step of our project.\""
+        },
+        {
+            src: "/videos/client_testimonatial3.MP4",
+            title: "Beyond Expectations",
+            desc: "\"The attention to detail and quality of materials used truly set them apart from every other team we considered.\""
+        }
+    ];
+
     return (
         <section className="testimonials" id="testimonials">
             <div className="container">
@@ -42,8 +55,33 @@ const Testimonials = () => {
                     </div>
                     <div className="video-meta">
                         <h3 className="video-client-name">A Modern Transformation</h3>
-                        <p className="video-client-desc">"The precision and dedication of Laya Space Design brought our vision to life in ways we never imagined."</p>
+                        <p className="video-client-desc">“The precision and dedication of Laya Space Design brought our vision to life in ways we never imagined.”</p>
                     </div>
+                </div>
+
+                {/* Additional Video Testimonials */}
+                <div className="video-testimonials-grid">
+                    {additionalVideos.map((video, index) => (
+                        <div key={index} className={`video-testimonial-card reveal-on-scroll delay-${(index + 1) * 200}`}>
+                            <div className="video-card-wrapper">
+                                <video 
+                                    controls 
+                                    poster="/videos/testimonial-poster-vertical.png"
+                                    className="testimonial-video-card"
+                                >
+                                    <source src={video.src} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div className="video-overlay">
+                                    <span className="play-hint">Watch Client Story</span>
+                                </div>
+                            </div>
+                            <div className="video-card-meta">
+                                <h3 className="video-card-title">{video.title}</h3>
+                                <p className="video-card-desc">{video.desc}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
                 <div className="testimonials-grid">
