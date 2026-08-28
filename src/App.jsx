@@ -36,6 +36,43 @@ function App() {
       }, 100); // reduced delay for better responsiveness
     }
   }, [location]);
+  useEffect(() => {
+    // Scroll reveal observer
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const observeElements = () => {
+      const elements = document.querySelectorAll('.reveal-on-scroll:not(.is-visible)');
+      elements.forEach((el) => observer.observe(el));
+    };
+
+    observeElements();
+
+    // Re-observe on DOM mutations to catch dynamic elements
+    const mutationObserver = new MutationObserver(() => {
+      observeElements();
+    });
+    
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
+  }, [location.pathname]); // Re-run when page changes
 
   return (
     <ModalProvider>

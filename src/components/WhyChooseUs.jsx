@@ -14,12 +14,12 @@ const WhyChooseUs = () => {
     return (
         <section className="why-choose-us" id="why-choose-us">
             <div className="container">
-                <div className="why-header">
+                <div className="why-header reveal-on-scroll">
                     <h2 className="why-title">Why Laya Space Design?</h2>
                 </div>
                 <div className="why-grid">
                     {points.map((point, index) => (
-                        <div key={index} className="why-card">
+                        <div key={index} className={`why-card reveal-on-scroll delay-${(index % 3) * 100 + 100}`}>
                             <h3 className="why-card-title">{point.title}</h3>
                             <p className="why-card-desc">{point.desc}</p>
                         </div>

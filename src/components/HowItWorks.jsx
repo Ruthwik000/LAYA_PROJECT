@@ -60,10 +60,10 @@ const HowItWorks = () => {
     return (
         <section className="how-it-works" id="how-it-works">
             <div className="container">
-                <h2 className="section-title">How It Works</h2>
+                <h2 className="section-title reveal-on-scroll">How It Works</h2>
                 <div className="steps-container">
                     {steps.map((step, index) => (
-                        <div key={index} className="how-step-item">
+                        <div key={index} className={`how-step-item reveal-on-scroll delay-${(index % 5) * 100 + 100}`}>
                             <div className="how-step-icon">
                                 {step.icon}
                                 <span className="step-number">{index + 1}</span>
