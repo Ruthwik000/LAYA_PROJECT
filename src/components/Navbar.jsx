@@ -126,6 +126,7 @@ const Navbar = () => {
             </div>
           </div>
           <Link to="/#modular-journey" onClick={(e) => handleHashLink(e, 'modular-journey')}><span>The Modular Journey</span></Link>
+          <Link to="/#workshop" onClick={(e) => handleHashLink(e, 'workshop')}><span>Workshop & Manufacturing</span></Link>
         </div>
       </div>
     </nav>
